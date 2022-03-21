@@ -1,0 +1,2 @@
+bot_description
+-DCATKIN_DEVEL_PREFIX=/home/grigorii/ROS_Works/buzmak/devel -DCMAKE_INSTALL_PREFIX=/home/grigorii/ROS_Works/buzmak/install -G Unix Makefiles

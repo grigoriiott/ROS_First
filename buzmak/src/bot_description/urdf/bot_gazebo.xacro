@@ -1,0 +1,6 @@
+<robot name="bot" xmlns:xacro="http://www.ros.org/wiki/xacro" >
+  
+  <xacro:include filename="$(find bot_description)/urdf/description.xacro"/>
+  <xacro:include filename="$(find bot_description)/urdf/gazebo_plugin.xacro"/>
+
+</robot>

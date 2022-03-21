@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch>
+
+    <arg name="x" default="0.0" />
+    <arg name="y" default="0.0" />
+    <arg name="z" default="0.2" />
+    <arg name="urdf_robot_file" default="$(find bot_description)/urdf/gazebo_plugin.xacro" />
+    <arg name="robot_name" default="bot" />
+    
+    <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" />
+    <param name="robot_description" command="$(find xacro)/xacro '$(arg urdf_robot_file)'" /> 
+
+    <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen"
+    args="-urdf -x $(arg x) -y $(arg y) -z $(arg z)  -model $(arg robot_name) -param robot_description"/>
+    <remap from="tf" to="gazebo_tf"/> 
+</launch>
